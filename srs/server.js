@@ -1,14 +1,19 @@
-//const express = require('express');
 import express from 'express';
-const path = require('path');
+import configViewEngine from './configs/viewEngine';
+//const path = require('path');
+
 const app = express();
-const port = 3001
+const port = 8084
+
+
+configViewEngine(app);
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.render('index.ejs');
 })
 
 app.get('/about', (req, res) => {
+
     res.send(`I'm Thanh Hiệp`)
 })
 

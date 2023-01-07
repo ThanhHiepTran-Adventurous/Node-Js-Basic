@@ -1,6 +1,5 @@
 import express from "express";
-import configViewEngine from "./configs/viewEngine";
-import initWebRoute from './router/web';
+//import initWebRoute from './router/web';
 
 let router = express.Router();
 
@@ -10,13 +9,16 @@ const initWebRoute = (app) => {
         res.render('index.ejs');
     })
 
-    router.post('/about', (req, res) => {
+    router.get('/about', (req, res) => {
 
         res.send(`Got a POST request`)
     })
 
 
-    return app.use('/', router)
+    return app.use('/api/v1/', router)
 }
+
+
+//export default initWebRoute;
 
 module.exports = initWebRoute;

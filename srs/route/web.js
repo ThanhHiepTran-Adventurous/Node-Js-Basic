@@ -1,15 +1,18 @@
 import express from "express";
+import configViewEngine from "./configs/viewEngine";
+import initWebRoute from './router/web';
 
 let router = express.Router();
 
+//around function
 const initWebRoute = (app) => {
     router.get('/', (req, res) => {
         res.render('index.ejs');
     })
 
-    router.get('/about', (req, res) => {
+    router.post('/about', (req, res) => {
 
-        res.send(`I'm Thanh Hiệp`)
+        res.send(`Got a POST request`)
     })
 
 

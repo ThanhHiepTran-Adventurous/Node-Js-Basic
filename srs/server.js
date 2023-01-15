@@ -3,7 +3,7 @@ import configViewEngine from './configs/viewEngine';
 import initWebRoute from './route/web'
 
 
-import connection from './configs/connectDB';
+// import connection from './configs/connectDB';
 
 require('dotenv').config()
 //const path = require('path');

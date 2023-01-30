@@ -10,12 +10,13 @@ import mysql from 'mysql2/promise'
 //     database: 'nodejsbasic'
 // });
 
-const pool = mysql.createPool({
+var pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
     password: '123456789',
     database: 'nodejsbasic'
 })
+
 
 // const connection = await mysql.createConnection({host:'localhost', user: 'root', database: 'test'});
 // simple query
@@ -31,3 +32,4 @@ const pool = mysql.createPool({
 // );
 
 module.exports = pool;
+//export default pool;

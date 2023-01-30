@@ -1,14 +1,23 @@
 // get the client
 //const mysql = require('mysql2');
-import mysql from 'mysql2'
+import mysql from 'mysql2/promise'
+// const mysql = require('mysql2/promise');
 // create the connection to database
-const connection = mysql.createConnection({
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: "123456789",
+//     database: 'nodejsbasic'
+// });
+
+const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: "123456789",
+    password: '123456789',
     database: 'nodejsbasic'
-});
+})
 
+// const connection = await mysql.createConnection({host:'localhost', user: 'root', database: 'test'});
 // simple query
 // connection.query(
 //     'SELECT * FROM `users`',
@@ -21,4 +30,4 @@ const connection = mysql.createConnection({
 //     }
 // );
 
-module.exports = connection;
+module.exports = pool;

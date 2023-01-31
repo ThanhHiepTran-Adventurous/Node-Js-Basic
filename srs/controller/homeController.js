@@ -44,10 +44,17 @@ let deleteUser = async (req, res) => {
 let getEditPage = async (req, res) => {
     let id = req.params.id;
     let [user] = await pool.execute('select * from users where id = ?', [id])
-    return res.send(JSON.stringify(user));
+    console.log(user)
+    return res.render('update.ejs', { dataUser: user[0] });
+}
+
+let postUpdateUser = async (req, res) => {
+    let { firstName, lastName, email, address } = req.body;
+    await pool.execute('', [userId]);
+    return res.send('hello update user');
 }
 
 //export function để sử dụng ở nơi kshác
 module.exports = {
-    getHomepage, getDetailPage, createNewUser, deleteUser, getEditPage
+    getHomepage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser
 };

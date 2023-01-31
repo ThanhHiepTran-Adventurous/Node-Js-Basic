@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Update user</title>
 </head>
 
 <body>
-    <form action="">
-        <div>
-            <label for="">First name:</label>
-            <input />
-        </div>
-        <div>
-            <label for="">Last name:</label>
-            <input />
-        </div>
-        <div>
-            <label for="">Email:</label>
-            <input />
-        </div>
-        <div>
-            <label for="">Address:</label>
-            <input />
-        </div>
-    </form>
+    <div class="update-user-container">
+        <form action="/api/v1/update-user" method="POST">
+            <div>
+                <label for="">First name:</label>
+                <input name="firstName" value="<%= dataUser.firstName %>" />
+            </div>
+            <div>
+                <label for="">Last name:</label>
+                <input name="lastName" value="<%= dataUser.lastName %>" />
+            </div>
+            <div>
+                <label for="">Email:</label>
+                <input name="email" value="<%= dataUser.email %>" />
+            </div>
+            <div>
+                <label for="">Address:</label>
+                <input name="address" value="<%= dataUser.address %>" />
+            </div>
+            <div>
+                <button type="submit" class="btn-save">Save</button>
+            </div>
+        </form>
+    </div>
+
 </body>
 
 </html>

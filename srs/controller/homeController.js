@@ -41,7 +41,13 @@ let deleteUser = async (req, res) => {
     return res.redirect('/api/v1');
 }
 
+let getEditPage = async (req, res) => {
+    let id = req.params.id;
+    let [user] = await pool.execute('select * from users where id = ?', [id])
+    return res.send(JSON.stringify(user));
+}
+
 //export function để sử dụng ở nơi kshác
 module.exports = {
-    getHomepage, getDetailPage, createNewUser, deleteUser
+    getHomepage, getDetailPage, createNewUser, deleteUser, getEditPage
 };

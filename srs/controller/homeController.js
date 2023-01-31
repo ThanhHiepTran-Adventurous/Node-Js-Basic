@@ -33,11 +33,15 @@ let createNewUser = async (req, res) => {
     return res.redirect('/api/v1')
 }
 
-let deleteUser = (req, res) => {
-    return res.send(`Hello from delete user ${req.body.userId}`);
+//bản chất của js là bất đồng bộ
+let deleteUser = async (req, res) => {
+    let userId = req.body.userId;
+
+    await pool.execute('delete from users where id = ?', [userId]);
+    return res.redirect('/api/v1');
 }
 
 //export function để sử dụng ở nơi kshác
 module.exports = {
     getHomepage, getDetailPage, createNewUser, deleteUser
-}
+};

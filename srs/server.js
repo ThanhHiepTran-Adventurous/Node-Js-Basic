@@ -11,7 +11,7 @@ require('dotenv').config()
 const app = express();
 const port = process.env.PORT || 8085;
 
-
+// không có 2 thằng này khi client gửi thông tin về phía sever sẽ bị undefined
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

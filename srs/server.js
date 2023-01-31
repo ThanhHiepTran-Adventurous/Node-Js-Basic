@@ -11,6 +11,11 @@ require('dotenv').config()
 const app = express();
 const port = process.env.PORT || 8085;
 
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+
 console.log('>>> check port: ', port)
 
 

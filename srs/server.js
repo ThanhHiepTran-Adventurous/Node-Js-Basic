@@ -9,7 +9,7 @@ require('dotenv').config()
 //const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 8085;
+const port = process.env.PORT || 8086;
 
 // không có 2 thằng này khi client gửi thông tin về phía sever sẽ bị undefined
 app.use(express.urlencoded({ extended: true }));

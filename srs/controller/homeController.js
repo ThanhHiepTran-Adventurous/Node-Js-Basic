@@ -33,7 +33,11 @@ let createNewUser = async (req, res) => {
     return res.redirect('/api/v1')
 }
 
+let deleteUser = (req, res) => {
+    return res.send(`Hello from delete user ${req.body.userId}`);
+}
+
 //export function để sử dụng ở nơi kshác
 module.exports = {
-    getHomepage, getDetailPage, createNewUser
+    getHomepage, getDetailPage, createNewUser, deleteUser
 }

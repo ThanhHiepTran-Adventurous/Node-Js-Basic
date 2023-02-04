@@ -6,7 +6,7 @@ let router = express.Router();
 
 //around function
 const initAPIRoute = (app) => {
-    router.get('/users', APIController.getHomepage);
+    router.get('/users', APIController.getAllUsers); // method GET -> READ DATA 
 
 
     return app.use('/api/v1/', router)

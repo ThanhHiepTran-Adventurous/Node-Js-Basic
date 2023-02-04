@@ -7,7 +7,6 @@ let getHomepage = async (req, res) => {
     let data = [];
 
     const [rows, fields] = await connection.execute('SELECT * FROM `users` ');
-    let check = await connection.execute('SELECT * FROM `users` ');
     return res.render('index.ejs', { dataUser: rows, test: 'abc string test' });
     // console.log('>>>>>check rows: ', rows);
     // console.log('>>>>>>>>>>>check data: ', typeof (data), JSON.stringify(data))

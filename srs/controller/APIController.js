@@ -10,6 +10,11 @@ let getAllUsers = async (req, res) => {
     })
 }
 
+
+let createNewUser = async (req, res) => {
+
+}
+
 module.exports = {
     getAllUsers
 }

@@ -49,9 +49,10 @@ let getEditPage = async (req, res) => {
 }
 
 let postUpdateUser = async (req, res) => {
-    let { firstName, lastName, email, address } = req.body;
-    await pool.execute('', [userId]);
-    return res.send('hello update user');
+    let { firstName, lastName, email, address, id } = req.body;
+    await pool.execute('update users set firstName= ?, lastName= ?, email= ?, address= ? where id = ?',
+        [firstName, lastName, email, address, id]);
+    return res.redirect('/api/v1');
 }
 
 //export function để sử dụng ở nơi kshác
